@@ -14,8 +14,11 @@ app_name = 'users'
 urlpatterns = [
     path('register/', views.register, name='register'),
     path('', views.login_view, name='login'),
-    path('login/', views.login_view, name='login'),
+    path('login/', views.login_view, name='login_view'),
     path('index/', views.index, name='index'),
     path('logout/', views.logout, name='logout'),
+    path('approve_users/', views.get_pending_approval_list, name='approve_list'),
+    path('user_approved/<int:user_id>/', views.approved_view, name='user_approved'),
+    path('user_declined/<int:user_id>/', views.declined_view, name='user_declined'),
 
 ]
